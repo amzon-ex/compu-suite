@@ -11,9 +11,8 @@ def domainInit(u_i,u_f,du):
 def systemInit(ind_var,dep_var,expr):
     global f,_f
     f = []
-    mod_expr = expr.replace(ind_var,"u")
-    mod_expr = expr.replace(dep_var,"f")
-    _f = mod_expr
+    _f = expr.replace(ind_var,"u")
+    _f = _f.replace(dep_var,"f")
     print("df/du = "+_f)
 
 #putting in initial value(s)
