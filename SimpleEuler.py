@@ -1,3 +1,8 @@
+#Euler's Method:
+#df(u)/du = g(u,f)
+#f(u+du) = f(u) + du(df/du)
+#
+#Used to solve the problem of SHO
 import numpy as np
 import matplotlib.pyplot as plt
 f = []
@@ -14,9 +19,6 @@ f.clear()
 _f.clear()
 f.append(ic1)
 _f.append(ic2)
-#ite = 0
 for ite in range(0,samples-1):
-    #if(ite<samples-1):
     _f.append(_f[ite] + del_u*(-f[ite]))
-    f.append(f[ite] + del_u*_f[ite] + (del_u)**2*(-f[ite])/2.0)
-    #ite = ite + 1
+    f.append(f[ite] + del_u*_f[ite])
